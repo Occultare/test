@@ -49,29 +49,18 @@
     }
     /* === SHINE EFFECT === */
     .shine {
-  color: #fff;
-  font-weight: 800;
-  text-shadow:
-    0 0 10px #ffd77e,
-    0 0 20px #ffce5c,
-    0 0 40px #ffcf4d,
-    0 0 80px #fff4bb;
-  animation: glow-fade 2s infinite alternate;
-}
-@keyframes glow-fade {
-  0% {
-    text-shadow:
-      0 0 8px #ffd77e,
-      0 0 16px #ffce5c,
-      0 0 32px #ffcf4d,
-      0 0 64px #fff4bb;
-  }
-  100% {
-    text-shadow:
-      0 0 18px #ffd77e,
-      0 0 32px #ffce5c,
-      0 0 64px #ffcf4d,
-      0 0 96px #fff4bb;
+      background: linear-gradient(90deg, #fff 12%, #d8a9ff 38%, #8c51ff 62%, #fff 88%);
+      background-size: 200% auto;
+      color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: shine-move 2.8s linear 1;
+    }
+    @keyframes shine-move {
+      0% { background-position: 200% 0; }
+      100% { background-position: 0 0; }
   }
     /* === END SHINE === */
     h1 {

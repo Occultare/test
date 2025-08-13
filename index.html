@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sacred Tower</title>
+  <link rel="icon" href="Sacred Tower.jpg" type="image/jpeg">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap');
+    body {
+      margin: 0;
+      background: linear-gradient(rgba(24,20,27,0.60), rgba(24,20,27,0.60)), url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Montserrat', Arial, sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    .fog {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.60;
+      filter: blur(1.5px);
+      will-change: transform;
+      transition: opacity .8s;
+    }
+    .container {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 48px 10px 40px 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cover {
+      width: 90vw; max-width: 320px;
+      margin: 0 auto 30px auto;
+      display: block;
+      border-radius: 0;
+      box-shadow: 0 6px 24px 0 #000c;
+      border: 2px solid #222;
+    }
+    /* === SHINE EFFECT === */
+    .shine {
+      background: linear-gradient(90deg, #fff 12%, #d8a9ff 38%, #8c51ff 62%, #fff 88%);
+      background-size: 200% auto;
+      color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      animation: shine-move 2.8s linear 1;
+    }
+    @keyframes shine-move {
+      0% { background-position: 200% 0; }
+      100% { background-position: 0 0; }
+    }
+    /* === END SHINE === */
+    h1 {
+      margin: 12px 0 8px 0;
+      font-size: 2.2em;
+      font-weight: 800;
+      letter-spacing: .02em;
+      text-align: center;
+    }
+    .subtitle {
+      margin-bottom: 24px;
+      color: #d8d8e4;
+      font-size: 1.12em;
+      text-align: center;
+      font-weight: 600;
+    }
+    .btn-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      cursor: pointer;
+      background: #232028;
+      color: #fff;
+      border-radius: 14px;
+      padding: 15px 18px;
+      font-size: 1.12em;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 2px 10px 0 #0005;
+      border: 1.5px solid #28232d;
+      letter-spacing: .01em;
+      transition: background .17s, box-shadow .17s, color .17s;
+    }
+    .btn:hover {
+      background: #352d3d;
+      box-shadow: 0 4px 20px 0 #0008;
+      color: #fafaff;
+    }
+    .icon {
+      width: 29px; height: 29px;
+      margin-right: 10px;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #fff;
+      display: flex; align-items: center; justify-content: center; overflow: hidden;
+    }
+    .icon img { width: 22px; height: 22px; display: block;}
+    .label { font-weight: 700; }
+    .service {
+      flex-grow: 1;
+      text-align: right;
+      opacity: .85;
+      font-size: .98em;
+      font-weight: 600;
+      margin-left: 10px;
+    }
+    @media (max-width:600px) {
+      .container { max-width: 99vw; padding: 28px 2vw 40px 2vw;}
+      .cover { max-width: 97vw; }
+      .btn { font-size: 1.02em; }
+    }
+  </style>
+</head>
+<body>
+  <video class="fog" autoplay loop muted playsinline preload="auto" webkit-playsinline>
+    <source src="fog_little.mp4" type="video/mp4" />
+  </video>
+  <div class="container">
+    <img src="Sacred Tower.jpg" alt="Sacred Tower cover" class="cover" />
+    <h1 class="shine">Sacred Tower</h1>
+    <div class="subtitle" id="subtitle">Play on your favorite platform</div>
+    <div class="btn-list">
+      <a href="https://open.spotify.com/album/0TUTSyJKvYL0H94vPBg7cr?si=uHEoJQsWRR2pM0ppRloCFw" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/Spotify.svg" alt="Spotify" /></span>
+        <span class="label" id="btn-spotify">Play</span>
+        <span class="service">Spotify</span>
+      </a>
+      <a href="https://music.apple.com/tr/album/sacred-tower-single/1824802577" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/Apple_Music.svg" alt="Apple Music" /></span>
+        <span class="label" id="btn-apple">Play</span>
+        <span class="service">Apple Music</span>
+      </a>
+      <a href="https://music.youtube.com/watch?v=nX1ELCKC3KA&si=AyLenRaQ62Zt7ZsD" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/Youtube_Music.svg" alt="YouTube Music" /></span>
+        <span class="label" id="btn-ytmusic">Play</span>
+        <span class="service">YouTube Music</span>
+      </a>
+      <a href="https://share.boom.ru/track/2a30775aaf9272b58b30b987801deb79?share_auth=02bf1326e0a62be9e1831a689c46000000" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/VK_Music.svg" alt="VK" /></span>
+        <span class="label" id="btn-vk">Play</span>
+        <span class="service">VK Музыка</span>
+      </a>
+      <a href="https://music.yandex.ru/album/37316096/track/140784920?utm_medium=copy_link&ref_id=67915E06-7FD4-497E-94AA-FBDAEAEDD743" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/Yandex_Music.svg" alt="Yandex" /></span>
+        <span class="label" id="btn-yandex">Play</span>
+        <span class="service">Яндекс Музыка</span>
+      </a>
+      <a href="https://zvuk.com/track/145783594" class="btn" target="_blank">
+        <span class="icon"><img src="Logo/SVG/Zvuk.svg" alt="Zvuk" /></span>
+        <span class="label" id="btn-zvuk">Play</span>
+        <span class="service">Zvuk</span>
+      </a>
+    </div>
+  </div>
+  <script>
+    const isRu = navigator.language.toLowerCase().startsWith("ru");
+    document.getElementById("subtitle").textContent = isRu
+      ? "Слушайте на любимой платформе"
+      : "Play on your favorite platform";
+    ["spotify","apple","ytmusic","vk","yandex","zvuk"].forEach(id => {
+      const el = document.getElementById("btn-"+id);
+      if(el) el.textContent = isRu ? "Слушать" : "Play";
+    });
+  </script>
+</body>
+</html>
